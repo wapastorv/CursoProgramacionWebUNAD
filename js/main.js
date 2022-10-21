@@ -10,12 +10,15 @@ function convertirUnidades(){
 }
 function calcularVenta() 
 {
-    var a1 = document.formVentas.valorCompra.value;
-    var b1 = document.formVentas.porcentajeUtilidad.value;
-    var c1 = document.f1.c.value;
-    var d1 = document.f1.d.value;
-    var c1 = (parseFloat(a1)*parseFloat(b1))/100;
-    var d1 = parseFloat(a1)+parseFloat(b1);
-    document.f1.c.value=c1;
-    document.f1.d.value=d1;        
+    var valorCompra =   document.formVentas.valor_compra.value;
+    var porcentajeUtilidad  =   document.formVentas.porcentaje_utilidad.value;
+    var porcentajeImpuestos =   document.formVentas.porcentaje_impuestos.value;
+    var resultadoValorVenta =   document.formVentas.resultado_valor_venta.value;
+    var resultadoGanancias  =   document.formVentas.resultado_ganancias.value;
+    var porcentaje_impuestos    =   (parseFloat(valorCompra)*parseFloat(porcentajeImpuestos))/100;
+    var porcentaje_utilidad =   (parseFloat(valorCompra)*parseFloat(porcentajeUtilidad))/100;
+    var r1 = parseFloat(valorCompra)+parseFloat(porcentaje_impuestos)+parseFloat(porcentaje_utilidad);
+    var r2 = parseFloat(porcentaje_utilidad);
+    document.formVentas.resultado_valor_venta.value =   r1;
+    document.formVentas.resultado_ganancias.value   =   r2;        
 }
