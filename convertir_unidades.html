@@ -86,8 +86,34 @@
                     Esta herramienta convirte una unidad de almacenamiento de datos digitales
                     a otra unidad de almacenamiento de datos digitales
                 </p>
-                <form name="formulacion-conversion" action="convertir_unidades.html" metodo="POST">
+                <form class="container col-md-8" name="formulacion-conversion" action="convertir_unidades.html" metodo="POST">
+                    <div class="input-group mb-3">
+                            <span class="input-group-text">Cantidad</span>
+                            <input type="text" class="form-control" name=""placeholder="Valor a convertir.." aria-label="Valor a convertir">
+                        <label class="input-group-text "  for="inputGroupSelect01">De</label>
+                        <select class="form-select" name="" id="inputGroupSelect01">
+                            <option selected>Elejir..</option>
+                            <option value="">Byte(B)</option>
+                            <option value="">KiloByte(kB)</option>
+                            <option value="">MegaBytes(MB)</option>
+                            <option value="">GigaBytes(GB)</option>
+                            <option value="">Terabyte(TB)</option>
+                        </select>
+                        <label class="input-group-text " for="inputGroupSelect01">a</label>
+                        <select class="form-select" name="" id="inputGroupSelect01">
+                            <option selected>Elejir..</option>
+                            <option value="">Byte(B)</option>
+                            <option value="">KiloByte(kB)</option>
+                            <option value="">MegaBytes(MB)</option>
+                            <option value="">GigaBytes(GB)</option>
+                            <option value="">Terabyte(TB)</option>
+                        </select>
+                        <button class="btn btn-primary">Convertir</button>
+                        <div class="input-group mb-3">
+                            <label class="input-group-text">Resultado</label>
+                            <input type="text" class="form-control" disabled>
 
+                        </div>
                 </form>
             </div>
         </main>
