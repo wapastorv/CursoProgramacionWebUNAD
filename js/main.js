@@ -1,11 +1,15 @@
 function convertirUnidades(){
     
-    var a = document.f1.a.value;
-    var b = document.f1.b1.value;
-    var x = document.f1.b2.value;
-    var r = document.f1.c.value;
-    r=(parseFloat(a)*parseFloat(x))/parseFloat(b);
-   document.f1.c.value=r;
+    var a = document.formularioConversionUnidades.inputCantidad.value;
+    var b = document.formularioConversionUnidades.inputGroupSelect01.value;
+    var x = document.formularioConversionUnidades.inputGroupSelect02.value;
+    var r = document.formularioConversionUnidades.inputResuldado.value;
+
+    r=((parseInt(a)*parseInt(x))/parseInt(b)) * parseInt(b);
+        document.formularioConversionUnidades.inputResuldado.value = r;
+
+    /* r=(parseFloat(a)*parseFloat(x))/parseFloat(b);
+   document.f1.c.value=r;*/
     
 }
 function calcularVenta() 
