@@ -1,17 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <link>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ElectronicApp</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link href="css/index.css" rel="stylesheet"link>
-  </head>
-  <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">Electronic App</a>
+                <a class="navbar-brand" href="./index.php">Electronic App</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -23,10 +12,10 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="#">Crear Base Datos</a>
+                                        <a class="dropdown-item" href="./crearBaseDeDatos.php">Crear Base Datos</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">Crear Tabla</a>
+                                        <a class="dropdown-item" href="./crearTabla.php">Crear Tabla</a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="#">Generar Reporte PDF</a>
@@ -44,16 +33,16 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="crearProducto.html">Crear</a>
+                                        <a class="dropdown-item" href="./crearProducto.php">Crear</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="consultarProducto.html">Consultar</a>
+                                        <a class="dropdown-item" href="./consultarProducto.php">Consultar</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="actualizarProducto.html">Actualizar</a>
+                                        <a class="dropdown-item" href="./actualizarProducto.php">Actualizar</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="eliminarProducto.html">Eliminar</a>
+                                        <a class="dropdown-item" href="./eliminarProducto.php">Eliminar</a>
                                     </li>
                                 </ul>
                             </li>
@@ -65,10 +54,10 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="calcularVentas.html">Calcular Ventas</a>
+                                        <a class="dropdown-item" href="./calcularVentas.php">Calcular Ventas</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="convertir_unidades.html">Conversion de Unidades</a>
+                                        <a class="dropdown-item" href="./convertir_unidades.php">Conversion de Unidades</a>
                                     </li>
                                 </ul>
                             </li>
@@ -76,23 +65,3 @@
                     </div>
                 </div>
             </nav>
-        </header>
-        <main class="flex-shrink-0">
-            <div class="container">
-                <h3 class="mt-5">
-                    Bienvenido a ElectronicApp
-                </h3>
-                <p class="lead">
-                    Por favor, seleccione una opción del menú para comenzar
-                </p>
-            </div>
-        </main>
-        
-        <footer class="footer mt-auto py-3 bg-light">
-            <div class="container-fluid">
-                <span class="text-muted">&copy; Todos los derechos reservados - UNAD - Codigo:301127_47</span>
-            </div>
-        </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  </body>
-</html>
