@@ -57,3 +57,9 @@ function calcularVenta()
     document.formVentas.resultado_valor_venta.value =   r1;
     document.formVentas.resultado_ganancias.value   =   r2;        
 }
+const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
