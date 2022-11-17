@@ -1,6 +1,4 @@
 <?php include('templates/header.php')?>
-<?php include('templates/nav.php')?>
-
         <main class="flex-shrink-0">
             <div class="container">
                 <h3 class="mt-5">
