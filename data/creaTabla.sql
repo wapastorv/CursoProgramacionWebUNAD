@@ -1,6 +1,6 @@
 use bdunad47;
 
-CREATE TABLE producto (
+CREATE TABLE tabla47 (
   id_producto INT(13) PRIMARY KEY,
   nombre_producto VARCHAR(30) NOT NULL,
   marca_producto VARCHAR(30) NOT NULL,
