@@ -15,7 +15,7 @@ $config = include 'config.php';
   
 
       $id = $_POST['codigo'];
-      $consultaSQL2 = "DELETE FROM producto WHERE id_producto =" . $id;
+      $consultaSQL2 = "DELETE FROM tabla47 WHERE id_producto =" . $id;
           
       $consulta = $conexion->prepare($consultaSQL2);
       $consulta->execute();
@@ -29,7 +29,7 @@ $config = include 'config.php';
     $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
     $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
       
-    $consultaSQL2 = "SELECT * FROM producto";
+    $consultaSQL2 = "SELECT * FROM tabla47";
   
     $sentencia = $conexion->prepare($consultaSQL2);
     $sentencia->execute();

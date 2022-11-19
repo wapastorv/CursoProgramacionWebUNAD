@@ -31,7 +31,7 @@ $resultado = [
         "cantidad"      => $_POST['cantidad_producto']
       ];
       
-      $consultaSQL2 = "UPDATE producto SET
+      $consultaSQL2 = "UPDATE tabla47 SET
           nombre_producto = :nombre,
           marca_producto = :marca,
           precio_producto = :precio,
@@ -52,7 +52,7 @@ $resultado = [
     $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
       
     $id = $_GET['codigo'];
-    $consultaSQL2 = "SELECT * FROM producto WHERE id_producto =" . $id;
+    $consultaSQL2 = "SELECT * FROM tabla47 WHERE id_producto =" . $id;
   
     $sentencia2 = $conexion->prepare($consultaSQL2);
     $sentencia2->execute();

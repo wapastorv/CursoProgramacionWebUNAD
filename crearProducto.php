@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
         "cantidad"  => $_POST['cantidad'],
     );
 
-    $consultaSQL = "INSERT INTO producto(id_producto, nombre_producto, marca_producto, precio_producto, cantidad_producto) values (:" . implode(", :", array_keys($producto)) . ")";
+    $consultaSQL = "INSERT INTO tabla47(id_producto, nombre_producto, marca_producto, precio_producto, cantidad_producto) values (:" . implode(", :", array_keys($producto)) . ")";
 
     $sentencia = $conexion->prepare($consultaSQL);
     $sentencia->execute($producto);
