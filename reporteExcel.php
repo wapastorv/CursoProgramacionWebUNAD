@@ -8,22 +8,7 @@ if (isset($_POST['submit']) && !hash_equals($_SESSION['csrf'], $_POST['csrf'])) 
 $error = false;
 $config = include 'config.php';
  
-  if (isset($_POST['submit'])) {
-    try {
-      $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
-      $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
-  
 
-      $id = $_POST['codigo'];
-      $consultaSQL2 = "DELETE FROM producto WHERE id_producto =" . $id;
-          
-      $consulta = $conexion->prepare($consultaSQL2);
-      $consulta->execute();
-  
-    }catch(PDOException $error) {
-      $error = $error->getMessage();
-    }
-  }
   
   try {
     $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
@@ -31,11 +16,25 @@ $config = include 'config.php';
       
     $consultaSQL2 = "SELECT * FROM tabla47";
   
-    $sentencia = $conexion->prepare($consultaSQL2);
-    $sentencia->execute();
-  
-    $producto = $sentencia->fetchAll();
-  
+    $sentencia = $conexion->query($consultaSQL2, PDO::FETCH_NUM);
+    $datos = [];
+
+
+
+    if (isset($_POST['submit'])) {     
+        for($i = 0; $sentencia->columnCount();$i++){
+            $datos = $sentencia->getColumnMeta($i)['name'];
+        }   
+           
+            header("Content-Type: application/csv");
+            header("Content-Disposition: attachment; filename=reporte.csv");
+            $mostrar_columnas = fopen('php://reportes','w+');
+            fputcsv($mostrar_columnas, $datos);
+            foreach($sentencia as $sentencia){
+                fputcsv($mostrar_columnas,$sentencia);
+
+            }        
+    }
   } catch(PDOException $error) {
     $error = $error->getMessage();
   }
@@ -59,17 +58,12 @@ $config = include 'config.php';
 }
 ?>
 <div class="container">
-  <h1>Formulario de eliminar  un producto</h1>
+  <h1>Generar Reporte en Excel</h1>
   <p class="lead">
-    Este Formulario nos servira para eliminar cualquier producto ya registrado
+    Este Formulario nos servira para genera el reporte de los productos en excel 
   </p>
   <form method="post">
-    <div class="form-group">
-      <label for="codigo">Codigo:</label>
-      <input type="text" class="form-control" placeholder="Ingrese el codigo del producto a eliminar" id="codigo" name="codigo" class="form-control">
-    </div>
-    <br>
-    <button type="submit" name="submit"class="btn btn-primary">Eliminar producto</button>
+    <button type="submit" name="submit"class="btn btn-primary">Reporte Excel</button>
     <input name="csrf" type="hidden" value="<?php echo escapar($_SESSION['csrf']); ?>">
   </form>
   </div>

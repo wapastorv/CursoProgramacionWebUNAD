@@ -18,7 +18,7 @@
                                         <a class="dropdown-item" href="./crearTabla.php">Crear Tabla</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">Generar Reporte PDF</a>
+                                        <a class="dropdown-item" href="./reporteExcel.php">Generar Reporte EXCEL</a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="#">Generar Backup</a>
