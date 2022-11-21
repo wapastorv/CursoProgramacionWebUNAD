@@ -15,7 +15,7 @@ $config = include 'config.php';
   
 
       $id = $_POST['codigo'];
-      $consultaSQL2 = "DELETE FROM producto WHERE id_producto =" . $id;
+      $consultaSQL2 = "DELETE FROM tabla47 WHERE id_producto =" . $id;
           
       $consulta = $conexion->prepare($consultaSQL2);
       $consulta->execute();

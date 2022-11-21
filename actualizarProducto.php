@@ -24,13 +24,14 @@
   }catch(PDOException $error){
     $error = $error->getMessage();
   }
+  $conexion = null;
 ?>
 <?php include 'templates/header.php' ?>
 
   <div class="container">
-  <h1>Formulario de consulta de un producto</h1>
+  <h1>Formulario de actualizacion de un producto</h1>
   <p class="lead">
-    Este Formulario nos servira para consultar cualquier producto ya registrado
+    Este Formulario nos servira para actualizar cualquier producto ya registrado
   </p>
   <form method="post">
     <div class="form-group">

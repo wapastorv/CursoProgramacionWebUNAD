@@ -20,8 +20,8 @@ try {
   <h4 class="alert-heading">Error!</h4>
   <p> La conexion ha fallado: <?php echo $error->getMessage(); ?></p>
 </div>
- <?php
+<?php
 }
 $conexion = null;
-?>
+ ?>
 <?php include "templates/footer.php";?>

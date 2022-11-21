@@ -21,7 +21,7 @@
                         <input type="text" class="form-control" id="porcentajeImpuestos" name="porcentaje_impuestos">
                     </div>
                     <div class="d-grid grap-2 d-md-block">
-                        <button class="btn btn-primary" type="button" onclick="calcularVenta()" > Calcular</button>
+                        <button class="btn btn-primary" type="button" onclick="calcularVenta()"> Calcular</button>
                         <button class="btn btn-light" type="reset" value="Limpiar"> Borrar</button>
                     </div>
                     <div class="col-6">

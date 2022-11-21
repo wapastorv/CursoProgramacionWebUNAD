@@ -69,6 +69,7 @@ $resultado = [
     $resultado['mensaje'] = $error->getMessage();
     
   }
+  $conexion = null;
 ?>
 
 <?php include 'templates/header.php' ?>

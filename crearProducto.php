@@ -38,6 +38,7 @@ if (isset($_POST['submit'])) {
     $resultado['mensaje'] = $error->getMessage();
   }
 }
+$conexion = null;
 ?>
 <?php include 'templates/header.php'?>
 <?php   

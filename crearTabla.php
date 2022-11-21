@@ -23,6 +23,7 @@ try {
 
    
  <?php
+ $conexion = null;
 
 }
 
