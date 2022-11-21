@@ -87,6 +87,10 @@ $conexion = null;
         <input name="csrf" type="hidden" value="<?php echo escapar($_SESSION['csrf']); ?>">
     </form>
 </div>
-
+<?php
+$conexion =null;
+$sentencia = null;
+$producto=null;
+?>
         
 <?php include 'templates/footer.php'?>

@@ -18,10 +18,12 @@ try {
   ?>
   <div class="alert alert-danger" role="alert">
   <h4 class="alert-heading">Error!</h4>
+  
   <p> La conexion ha fallado: <?php echo $error->getMessage(); ?></p>
 </div>
 <?php
 }
 $conexion = null;
+$sql=null;
  ?>
 <?php include "templates/footer.php";?>

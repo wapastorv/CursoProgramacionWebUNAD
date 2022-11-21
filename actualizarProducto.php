@@ -15,8 +15,9 @@
     if (isset($_POST['codigo'])) {
       $consultaSQL = "SELECT * FROM tabla47 WHERE id_producto = " . $_POST['codigo'];
     }else{
-      $consultaSQL = "SELECT * FROM tabla47 WHERE id_producto = 0";
+      $consultaSQL = "SELECT * FROM tabla47";
     }
+    
 
     $sentencia = $conexion->prepare($consultaSQL);
     $sentencia->execute();
@@ -24,7 +25,7 @@
   }catch(PDOException $error){
     $error = $error->getMessage();
   }
-  $conexion = null;
+  
 ?>
 <?php include 'templates/header.php' ?>
 
@@ -46,7 +47,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <table class="table">
+        <table class="table table-bordered table-striped">
           <thead>
             <tr>
               <th>Codigo del producto</th>
@@ -81,4 +82,9 @@
       </div>
     </div>
   </div>
+<?php
+$conexion =null;
+$sentencia = null;
+$producto=null;
+?>
 <?php include 'templates/footer.php'?>

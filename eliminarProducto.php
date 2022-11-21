@@ -76,7 +76,7 @@ $config = include 'config.php';
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <table class="table">
+        <table class="table table-bordered table-striped">
           <thead>
             <tr>
               <th>Codigo del producto</th>
@@ -86,13 +86,13 @@ $config = include 'config.php';
               <th>cantidad</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-group-divider">
             <?php
             if ($producto && $sentencia->rowCount() > 0) {
               foreach ($producto as $fila) {
             ?>
                 <tr>
-                  <td><?php echo escapar($fila["id_producto"]); ?></td>
+                  <td ><?php echo escapar($fila["id_producto"]); ?></td>
                   <td><?php echo escapar($fila["nombre_producto"]); ?></td>
                   <td><?php echo escapar($fila["marca_producto"]); ?></td>
                   <td><?php echo escapar($fila["precio_producto"]); ?></td>
@@ -107,4 +107,9 @@ $config = include 'config.php';
       </div>
     </div>
   </div>
+<?php
+$conexion =null;
+$sentencia = null;
+$producto=null;
+?>
 <?php include 'templates/footer.php'?>

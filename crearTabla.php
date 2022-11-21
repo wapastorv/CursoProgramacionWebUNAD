@@ -24,6 +24,7 @@ try {
    
  <?php
  $conexion = null;
+ $sql= null;
 
 }
 

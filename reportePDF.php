@@ -9,9 +9,9 @@ header("Content-Type:application/pdf");
 header("Content-Disposition:attachment; filename=output.pdf");
 try{
     $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
-    $conexion2 = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
-    $conexion2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $results = $conexion2->query('SELECT nombre_producto, marca_producto, precio_producto, cantidad_producto FROM tabla47');
+    $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
+    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $results = $conexion->query('SELECT nombre_producto, marca_producto, precio_producto, cantidad_producto FROM tabla47');
     $results->setFetchMode(PDO::FETCH_ASSOC);
     /*while($row = $results->fetch()){
         echo $row['nombre_producto'] . "\n";
@@ -46,4 +46,10 @@ try{
 } catch(PDOException $error){
     $error = $error->getMessage();  
 }
+
+
+$conexion =null;
+$result = null;
+$sql=null;
+?>
 

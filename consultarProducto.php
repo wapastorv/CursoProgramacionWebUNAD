@@ -93,4 +93,9 @@
       </div>
     </div>
   </div>
+  <?php
+$conexion =null;
+$sentencia = null;
+$producto=null;
+?>
 <?php include 'templates/footer.php'?>

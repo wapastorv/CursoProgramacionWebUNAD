@@ -134,7 +134,7 @@ if (isset($_POST['submit']) && !$resultado['error']) {
           <div class="form-group">
             <input name="csrf" type="hidden" value="<?php echo escapar($_SESSION['csrf']); ?>">
             <input type="submit" name="submit" class="btn btn-primary" value="Actualizar">
-            <a class="btn btn-primary" href="consultarProducto.php">Regresar a Consultar</a>
+            <a class="btn btn-primary" href="actualizarProducto.php">Regresar a Consultar</a>
           </div>
         </form>
       </div>
@@ -142,5 +142,10 @@ if (isset($_POST['submit']) && !$resultado['error']) {
   </div>
   <?php
 }
+?>
+<?php
+$conexion =null;
+$sentencia = null;
+$producto=null;
 ?>
 <?php include 'templates/footer.php' ?>

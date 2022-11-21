@@ -7,12 +7,12 @@ header("Content-Type:application/csv");
 header("Content-Disposition:attachment; filename=output.csv");
 try {
   $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
-  $conexion2 = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
-  $conexion2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
+  $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $sql = "SELECT nombre_producto, marca_producto, precio_producto, cantidad_producto FROM tabla47";
 
 
-  $results = $conexion2->query($sql, PDO::FETCH_NUM);
+  $results = $conexion->query($sql, PDO::FETCH_NUM);
   $columns = [];
   for ($i = 0; $i < $results->columnCount(); $i++) {
     $columns[] = $results->getColumnMeta($i)['name'];
@@ -27,3 +27,8 @@ try {
 } catch (PDOException $error) {
   $error = $error->getMessage();
 }
+
+$conexion =null;
+$result = null;
+$sql=null;
+?>
