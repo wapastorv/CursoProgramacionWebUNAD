@@ -15,7 +15,7 @@ $config = include 'config.php';
   
 
       $id = $_POST['codigo'];
-      $consultaSQL2 = "DELETE FROM producto WHERE id_producto =" . $id;
+      $consultaSQL2 = "DELETE FROM tabla47 WHERE id_producto =" . $id;
           
       $consulta = $conexion->prepare($consultaSQL2);
       $consulta->execute();
@@ -29,7 +29,7 @@ $config = include 'config.php';
     $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
     $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
       
-    $consultaSQL2 = "SELECT * FROM producto";
+    $consultaSQL2 = "SELECT * FROM tabla47";
   
     $sentencia = $conexion->prepare($consultaSQL2);
     $sentencia->execute();
@@ -76,7 +76,7 @@ $config = include 'config.php';
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <table class="table">
+        <table class="table table-bordered table-striped">
           <thead>
             <tr>
               <th>Codigo del producto</th>
@@ -86,13 +86,13 @@ $config = include 'config.php';
               <th>cantidad</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-group-divider">
             <?php
             if ($producto && $sentencia->rowCount() > 0) {
               foreach ($producto as $fila) {
             ?>
                 <tr>
-                  <td><?php echo escapar($fila["id_producto"]); ?></td>
+                  <td ><?php echo escapar($fila["id_producto"]); ?></td>
                   <td><?php echo escapar($fila["nombre_producto"]); ?></td>
                   <td><?php echo escapar($fila["marca_producto"]); ?></td>
                   <td><?php echo escapar($fila["precio_producto"]); ?></td>
@@ -107,4 +107,9 @@ $config = include 'config.php';
       </div>
     </div>
   </div>
+<?php
+$conexion =null;
+$sentencia = null;
+$producto=null;
+?>
 <?php include 'templates/footer.php'?>

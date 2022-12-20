@@ -31,7 +31,7 @@ $resultado = [
         "cantidad"      => $_POST['cantidad_producto']
       ];
       
-      $consultaSQL2 = "UPDATE producto SET
+      $consultaSQL2 = "UPDATE tabla47 SET
           nombre_producto = :nombre,
           marca_producto = :marca,
           precio_producto = :precio,
@@ -52,7 +52,7 @@ $resultado = [
     $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
       
     $id = $_GET['codigo'];
-    $consultaSQL2 = "SELECT * FROM producto WHERE id_producto =" . $id;
+    $consultaSQL2 = "SELECT * FROM tabla47 WHERE id_producto =" . $id;
   
     $sentencia2 = $conexion->prepare($consultaSQL2);
     $sentencia2->execute();
@@ -69,6 +69,7 @@ $resultado = [
     $resultado['mensaje'] = $error->getMessage();
     
   }
+  $conexion = null;
 ?>
 
 <?php include 'templates/header.php' ?>
@@ -133,7 +134,7 @@ if (isset($_POST['submit']) && !$resultado['error']) {
           <div class="form-group">
             <input name="csrf" type="hidden" value="<?php echo escapar($_SESSION['csrf']); ?>">
             <input type="submit" name="submit" class="btn btn-primary" value="Actualizar">
-            <a class="btn btn-primary" href="consultarProducto.php">Regresar a Consultar</a>
+            <a class="btn btn-primary" href="actualizarProducto.php">Regresar a Consultar</a>
           </div>
         </form>
       </div>
@@ -141,5 +142,10 @@ if (isset($_POST['submit']) && !$resultado['error']) {
   </div>
   <?php
 }
+?>
+<?php
+$conexion =null;
+$sentencia = null;
+$producto=null;
 ?>
 <?php include 'templates/footer.php' ?>

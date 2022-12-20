@@ -13,11 +13,11 @@ function convertirUnidades(){
         r = (parseFloat(a) * 1e+3);
         document.formularioConversionUnidades.inputResuldado.value=r;
     }
-    if(b == "Byte" && x == "Megabyte" || b == "Megabyte" && x == "Byte" || b == "Gigabyte" && x == "Kilobyte" || b == "Terabyte" && x == "Megabyte"){
+    if(b == "Megabyte" && x == "Byte" || b == "Gigabyte" && x == "Kilobyte" || b == "Terabyte" && x == "Megabyte"){
         r = (parseFloat(a)* 1e+6);
         document.formularioConversionUnidades.inputResuldado.value=r;
     }
-    if(b == "Kilobyte" && x == "Gigabyte" || b == "Megabyte" && x == "Terabyte"){
+    if(b == "Byte" &&  x == "Megabyte" || b == "Kilobyte" && x == "Gigabyte" || b == "Megabyte" && x == "Terabyte"){
         r = (parseFloat(a) / 1e+6);
         document.formularioConversionUnidades.inputResuldado.value=r;
     }

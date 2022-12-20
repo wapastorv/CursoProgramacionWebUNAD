@@ -14,9 +14,9 @@
     $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
 
     if (isset($_POST['codigo'])) {
-      $consultaSQL = "SELECT * FROM producto WHERE id_producto = " . $_POST['codigo'];
+      $consultaSQL = "SELECT * FROM tabla47 WHERE id_producto = " . $_POST['codigo'];
     }else{
-      $consultaSQL = "SELECT * FROM producto WHERE id_producto = 0";
+      $consultaSQL = "SELECT * FROM tabla47 WHERE id_producto = 0";
     }
 
     $sentencia = $conexion->prepare($consultaSQL);
@@ -93,4 +93,9 @@
       </div>
     </div>
   </div>
+  <?php
+$conexion =null;
+$sentencia = null;
+$producto=null;
+?>
 <?php include 'templates/footer.php'?>

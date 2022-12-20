@@ -18,7 +18,7 @@
                                         <a class="dropdown-item" href="./crearTabla.php">Crear Tabla</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">Generar Reporte PDF</a>
+                                        <a class="dropdown-item" href="./consultaReporte.php">Generar Reporte</a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="#">Generar Backup</a>
@@ -57,7 +57,7 @@
                                         <a class="dropdown-item" href="./calcularVentas.php">Calcular Ventas</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="./convertir_unidades.php">Conversion de Unidades</a>
+                                        <a class="dropdown-item" href="./convertirUnidades.php">Conversion de Unidades</a>
                                     </li>
                                 </ul>
                             </li>

@@ -13,10 +13,11 @@
     $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
 
     if (isset($_POST['codigo'])) {
-      $consultaSQL = "SELECT * FROM producto WHERE id_producto = " . $_POST['codigo'];
+      $consultaSQL = "SELECT * FROM tabla47 WHERE id_producto = " . $_POST['codigo'];
     }else{
-      $consultaSQL = "SELECT * FROM producto WHERE id_producto = 0";
+      $consultaSQL = "SELECT * FROM tabla47";
     }
+    
 
     $sentencia = $conexion->prepare($consultaSQL);
     $sentencia->execute();
@@ -24,13 +25,14 @@
   }catch(PDOException $error){
     $error = $error->getMessage();
   }
+  
 ?>
 <?php include 'templates/header.php' ?>
 
   <div class="container">
-  <h1>Formulario de consulta de un producto</h1>
+  <h1>Formulario de actualizacion de un producto</h1>
   <p class="lead">
-    Este Formulario nos servira para consultar cualquier producto ya registrado
+    Este Formulario nos servira para actualizar cualquier producto ya registrado
   </p>
   <form method="post">
     <div class="form-group">
@@ -45,7 +47,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <table class="table">
+        <table class="table table-bordered table-striped">
           <thead>
             <tr>
               <th>Codigo del producto</th>
@@ -80,4 +82,9 @@
       </div>
     </div>
   </div>
+<?php
+$conexion =null;
+$sentencia = null;
+$producto=null;
+?>
 <?php include 'templates/footer.php'?>

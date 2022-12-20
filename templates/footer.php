@@ -1,3 +1,4 @@
+<script src="js/main.js"></script>
 <footer class="footer mt-auto py-3 bg-light">
             <div class="container-fluid">
                 <span class="text-muted">&copy; Todos los derechos reservados - UNAD - Codigo:301127_47</span>
