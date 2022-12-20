@@ -17,7 +17,7 @@ function convertirUnidades(){
         r = (parseFloat(a)* 1e+6);
         document.formularioConversionUnidades.inputResuldado.value=r;
     }
-    if(b =="Byte" && x == "Megabyte" || b == "Kilobyte" && x == "Gigabyte" || b == "Megabyte" && x == "Terabyte"){
+    if(b == "Byte" &&  x == "Megabyte" || b == "Kilobyte" && x == "Gigabyte" || b == "Megabyte" && x == "Terabyte"){
         r = (parseFloat(a) / 1e+6);
         document.formularioConversionUnidades.inputResuldado.value=r;
     }
