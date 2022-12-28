@@ -15,11 +15,8 @@
     if (isset($_POST['codigo'])) {
       $consultaSQL = "SELECT * FROM tabla47 WHERE id_producto = " . $_POST['codigo'];
     }else{
-<<<<<<< HEAD
+
       $consultaSQL = "SELECT * FROM tabla47";
-=======
-      $consultaSQL = "SELECT * FROM tabla47 WHERE id_producto = 0";
->>>>>>> invetarios
     }
     
 
