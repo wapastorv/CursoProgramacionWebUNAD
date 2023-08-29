@@ -63,8 +63,19 @@ $conexion = null;
     </p>
     <form method="post">
         <div class="form-group">
+          
+          <?php
+            $contador_id = 0;
+            $consultaSQL2 = ('SELECT * FROM tabla47 WHERE id_producto = "1" ');
+            $sentencia2 = $conexion->prepare($consultaSQL2);
+            $sentencia2-> execute();
+            $ids = $sentencia2->fetchAll(PDO::FETCH_ASSOC);
+            foreach($ids as $id_producto){
+              $contador_id = $contador_id + 1 ;
+            }
+          ?>
             <label for="codigo">Codigo:</label>
-            <input type="text" class="form-control" placeholder="Ingrese el Codigo del producto" id="codigo" name="codigo" class="form-control">
+            <input type="text" class="form-control" value=" <?php $contador_id ?> " id="codigo" name="codigo" class="form-control">
         </div>
         <div class="form-group">
             <label for="nombre">Nombre:</label>
